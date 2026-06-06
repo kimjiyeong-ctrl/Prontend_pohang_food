@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문의 | POHANG FOOD MAP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <img src="assets/pohang_mascot.svg" alt="포항 마스코트">
+    <span>POHANG FOOD MAP</span>
+  </a>
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="recommend.html">맛집 추천</a>
+    <a href="monthly.html">이번달 추천</a>
+    <div class="nav-dropdown">
+      <a href="food.html">음식 ▾</a>
+      <div class="dropdown-menu">
+        <a href="korean.html">한식</a>
+        <a href="japanese.html">일식</a>
+        <a href="chinese.html">중식</a>
+        <a href="western.html">양식</a>
+        <a href="cafe.html">카페</a>
+      </div>
+    </div>
+    <a href="reviews.html">리뷰</a>
+    <a href="contact.html" class="active">문의</a>
+  </nav>
+</header>
+<section class="page contact-page">
+  <div class="page-title"><div class="eyebrow">문의하기</div><h1>추천하고 싶은 곳이 있나요?</h1><p>맛집 추천, 정보 수정 요청, 리뷰 링크 오류를 남겨주세요.</p></div>
+  <form class="contact-box" id="contactForm">
+    <select required>
+      <option value="">문의 종류를 선택하세요</option>
+      <option>맛집 추천 요청</option>
+      <option>식당 정보 수정 요청</option>
+      <option>리뷰 링크 오류 신고</option>
+      <option>카페 추천</option>
+      <option>기타 문의</option>
+    </select>
+    <input type="text" placeholder="이름을 입력하세요" required>
+    <input type="email" placeholder="이메일을 입력하세요" required>
+    <input type="text" placeholder="문의 제목을 입력하세요" required>
+    <textarea placeholder="문의 내용을 입력하세요" required></textarea>
+    <button type="submit">문의 보내기</button>
+    <div class="submit-message" id="submitMessage">문의가 접수되었습니다. 빠르게 확인해볼게요!</div>
+  </form>
+</section>
+<script>
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('submitMessage');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  msg.classList.add('show');
+  form.reset();
+  setTimeout(function(){ msg.classList.remove('show'); }, 3500);
+});
+</script>
+
+<footer>
+  <strong>@2026 프론이들</strong>
+</footer>
+</body>
+</html>
